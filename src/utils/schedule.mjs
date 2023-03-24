@@ -4,7 +4,7 @@ import { checkUserIsInGroup } from "./getGroupMembers.mjs";
 
 export function createCron(client) {
   schedule(
-    "0 50 12 * * *",
+    "0 51 12 * * *",
     async () => {
       const groupData = await getGroupMembers(client);
 
@@ -18,7 +18,7 @@ export function createCron(client) {
         return `*Nome:* ${data.name}\n *Telefone*: ${
           data.phone
         }\n *Usuário está no grupo*: ${
-          userIsInGroup ? "Sim, com este número" : "Não com este número"
+          userIsInGroup ? "Sim, com este número\n" : "Não com este número\n"
         } ---- \n\n`;
       });
 
