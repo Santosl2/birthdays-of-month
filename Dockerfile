@@ -1,12 +1,12 @@
 FROM node:19-alpine AS base
 
 WORKDIR app/
-COPY package*.json ./
-COPY planilha.pdf ./
-COPY src/* ./
+
+COPY . .
+ENV PORT=80
 
 RUN npm ci
 
 EXPOSE 80
 
-CMD ['npm', 'start']
+CMD ['npm', 'run', 'start']
