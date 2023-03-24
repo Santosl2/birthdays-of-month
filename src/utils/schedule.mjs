@@ -4,7 +4,7 @@ import { checkUserIsInGroup } from "./getGroupMembers.mjs";
 
 export function createCron(client) {
   schedule(
-    "0 40 12 * * *",
+    "0 50 12 * * *",
     async () => {
       const groupData = await getGroupMembers(client);
 
